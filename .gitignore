@@ -1,0 +1,6 @@
+.vite-dist
+**/*.log
+node_modules
+theme/js
+theme/style.css
+vendor
