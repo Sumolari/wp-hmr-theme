@@ -1,0 +1,4 @@
+.vite-dist
+node_modules
+theme
+vendor

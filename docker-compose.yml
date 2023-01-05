@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  database:
+    image: mysql:5.7
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_RANDOM_ROOT_PASSWORD: demo
+    ports:
+      - 3306:3306
+    logging:
+      driver: none
+
+  wordpress:
+    depends_on:
+      - database
+    image: wordpress
+    volumes:
+      - ./theme:/var/www/html/wp-content/themes/llu.is
+      - wp-uploads:/var/www/html/wp-content/uploads
+      - wp-plugins:/var/www/html/wp-content/plugins
+    environment:
+      WORDPRESS_DB_HOST: database
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: define('FS_METHOD', 'direct');
+      VITE_DEV_SERVER_ADDRESS: ${VITE_DEV_SERVER_ADDRESS}
+    ports:
+      - 8080:80
+
+volumes:
+  db-data: {}
+  wp-uploads: {}
+  wp-plugins: {}

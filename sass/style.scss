@@ -1,0 +1,18 @@
+/*!
+Theme Name: wp-hmr-theme
+Theme URI: https://github.com/Sumolari/wp-hmr-theme
+Description: A blank WordPress Theme with SASS, TypeScript and Hot Module Replacement (HMR) support
+Author: Lluís Ulzurrun de Asanza Sàez (Sumolari)
+Version: 1.0
+Tested up to: 7.4.9
+Requires PHP: 7.4.9
+Template: twentytwenty
+*/
+
+@import url('http://localhost:8080/wp-content/themes/twentytwenty/style.css');
+
+$background-color: red;
+
+body {
+  background: $background-color;
+}

@@ -1,0 +1,7 @@
+{
+  "*.sh": ["npm run lint:shell"],
+  "*.ts": ["npm run lint:eslint"],
+  "*.yml": ["npm run lint:prettier"],
+  "*.scss": ["npm run lint:prettier"],
+  "*.php": ["npm run lint:php", "composer run-script lint:wpcs", "composer run-script fix:wpcs"]
+}

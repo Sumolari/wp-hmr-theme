@@ -1,0 +1,7 @@
+.vite-dist
+composer.lock
+node_modules
+theme/editor-style.css
+theme/js
+theme/style.css
+vendor
