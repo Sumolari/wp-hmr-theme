@@ -24,6 +24,7 @@ sass/style.ts              Entrypoint for style.css
 theme/**/*.php             Theme PHP files
 theme/screenshot.png       Screenshot for WordPress theme picker
 theme/style.css            CSS entrypoint for WordPress theme
+ts/**/*.ts                 TypeScript source files used by the theme
 tsconfig.json              Configures TypeScript
 vendor/**/*                Dependencies installed by composer
 vite/**/*                  Vite helpers and plugins

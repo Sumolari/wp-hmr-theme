@@ -12,6 +12,10 @@ export default defineConfig({
       sourceFileName: 'style.css',
       absolutePathToDestination: resolvePath(__dirname, './theme/style.css'),
     }),
+    CopyFilePlugin({
+      sourceFileName: 'helloWorld',
+      absolutePathToDestination: resolvePath(__dirname, './theme/js/hello-world.js'),
+    }),
   ],
   build: {
     target: 'modules',
@@ -19,6 +23,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         stylesheet: './sass/style.ts',
+        helloWorld: './ts/hello-world.ts',
       },
     },
   },
