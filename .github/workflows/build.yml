@@ -8,18 +8,18 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: "npm"
+          cache: 'npm'
       - uses: actions/cache@v3
         name: Restore NPM cache
         id: npm-cache
         with:
-          path: "**/node_modules"
+          path: '**/node_modules'
           key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}
       - uses: actions/cache@v3
         name: Restore Composer cache
         id: composer-cache
         with:
-          path: "**/vendor"
+          path: '**/vendor'
           key: ${{ runner.os }}-vendor-${{ hashFiles('**/composer.lock') }}
       - run: npm ci
         if: ${{ steps.yarn-cache.outputs.cache-hit != 'true' }}
